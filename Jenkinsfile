@@ -42,8 +42,8 @@ pipeline{
         script{
           try{
             bat "mvn install"
-            bat "docker build --tag StagingEnv ."
-            bat "docker run -p 9000:8081 -it StagingEnv"
+            bat "docker build --tag stagingenv ."
+            bat "docker run -p 9000:8081 -it stagingenv"
           }
           catch(err){
            echo "deploy fail with $err. Continuing to next step" 

@@ -13,7 +13,6 @@ pipeline{
           try{
             bat "mvn clean"
             bat "mvn compile"
-            bat "mvn test"
           }
           catch(err){
            echo "Build fail with $err. Continuing to next step" 
@@ -39,7 +38,8 @@ pipeline{
         echo("Inside deploy")
         script{
           try{
-            bat "mvn spring-boot:run"
+            bat "mvn install"
+            
           }
           catch(err){
            echo "deploy fail with $err. Continuing to next step" 

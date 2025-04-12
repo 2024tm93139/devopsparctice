@@ -1,5 +1,5 @@
 def build_success=false;
-def dir=pwd;
+def dir=pwd();
 pipeline{
   agent any
   stages{

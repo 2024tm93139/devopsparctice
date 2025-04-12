@@ -41,8 +41,10 @@ pipeline{
         echo("Inside deploy")
         script{
           try{
+            def now = new Date()
+            image_id = now.format("yyMMdd.HHmm", TimeZone.getTimeZone('UTC'))
             bat "mvn install"
-            bat "docker build --tag stagingenv ."
+            bat "docker build --tag ${image_id} ."
             bat "docker run -p 9000:8081 -d stagingenv"
             //echo "deployed"
           }

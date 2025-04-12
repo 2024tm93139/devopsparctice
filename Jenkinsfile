@@ -1,14 +1,11 @@
 def build_success=false;
+def dir=pwd;
 pipeline{
   agent any
   stages{
     stage("build"){
       steps{
-        echo("Inside build")
-        Maven("maven"){
-          sh 'mvn clean'
-          sh 'mvn compile'
-        }
+        echo("Inside build {$dir}")
       }
     }
     stage("test"){

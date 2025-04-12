@@ -1,5 +1,5 @@
 def build_success=false
-def cdir = %cd%
+def cdir = $pwd
 pipeline{
   agent any
   stages{

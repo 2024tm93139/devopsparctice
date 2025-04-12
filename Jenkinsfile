@@ -8,7 +8,7 @@ pipeline{
         echo("Inside build")
         script{
           try{
-            bat "javac HelloWorld.java"
+            bat "mvn clean"
           }
           catch(err){
            echo "Build fail with $err" 

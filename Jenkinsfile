@@ -8,7 +8,7 @@ pipeline{
         //script{
          //cdir=this.pwd() 
        // }
-        javac "HelloWorld.java"
+        sh "javac HelloWorld.java"
         echo("Inside build")
       }
     }

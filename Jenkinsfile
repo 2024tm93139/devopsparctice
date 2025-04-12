@@ -5,9 +5,9 @@ pipeline{
   stages{
     stage("build"){
       steps{
-        script{
+        //script{
          //cdir=this.pwd() 
-        }
+       // }
         javac "HelloWorld.java"
         echo("Inside build")
       }

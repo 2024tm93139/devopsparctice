@@ -8,7 +8,7 @@ pipeline{
   stages{
     stage("build"){
       steps{
-        echo("Inside build")
+        echo("Inside build to test polling")
         script{
           try{
             bat "mvn clean"

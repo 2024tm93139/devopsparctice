@@ -41,7 +41,7 @@ pipeline{
         script{
           try{
             bat "mvn install"
-            
+            bat "docker build -t staging:1.0 ."
           }
           catch(err){
            echo "deploy fail with $err. Continuing to next step" 

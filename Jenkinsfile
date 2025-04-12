@@ -2,6 +2,9 @@ def build_success=false
 def cdir
 pipeline{
   agent any
+  tools{
+    maven 'Maven'
+  }
   stages{
     stage("build"){
       steps{

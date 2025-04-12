@@ -5,7 +5,7 @@ pipeline{
     stage("build"){
       steps{
         echo("Inside build")
-        maven("maven"){
+        Maven("maven"){
           sh 'mvn clean'
           sh 'mvn build'
         }

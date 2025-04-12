@@ -1,11 +1,10 @@
 def build_success=false
-def cdir = $pwd
 pipeline{
   agent any
   stages{
     stage("build"){
       steps{
-        //cdir=this.pwd()
+        var cdir=this.pwd()
         echo("Inside build {$dir}")
       }
     }

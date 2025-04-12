@@ -8,8 +8,13 @@ pipeline{
         //script{
          //cdir=this.pwd() 
        // }
-        bat "javac HelloWorld.java"
         echo("Inside build")
+        try{
+          bat "javac HelloWorld.java"
+        }
+        catch(err){
+         echo "Build fail with $err" 
+        }
       }
     }
     stage("test"){

@@ -5,15 +5,14 @@ pipeline{
   stages{
     stage("build"){
       steps{
-        //script{
-         //cdir=this.pwd() 
-       // }
         echo("Inside build")
-        try{
-          bat "javac HelloWorld.java"
-        }
-        catch(err){
-         echo "Build fail with $err" 
+        script{
+          try{
+            bat "javac HelloWorld.java"
+          }
+          catch(err){
+           echo "Build fail with $err" 
+          }
         }
       }
     }

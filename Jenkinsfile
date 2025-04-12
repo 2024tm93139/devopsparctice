@@ -2,7 +2,7 @@ def build_success=false
 def cdir
 pipeline{
   agent {
-    slaveagent
+    label 'slaveagent'
   }
   tools{
     maven 'maven'

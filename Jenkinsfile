@@ -5,6 +5,10 @@ pipeline{
     stage("build"){
       steps{
         echo("Inside build")
+        maven("maven"){
+          sh 'mvn clean'
+          sh 'mvn build'
+        }
       }
     }
     stage("test"){

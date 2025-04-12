@@ -1,5 +1,5 @@
 def build_success=false;
-def dir=this.pwd;
+def dir=this.pwd();
 pipeline{
   agent any
   stages{

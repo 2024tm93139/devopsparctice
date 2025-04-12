@@ -4,7 +4,7 @@ pipeline{
   stages{
     stage("build"){
       steps{
-        var cdir=this.pwd()
+        def cdir=this.pwd()
         echo("Inside build {$cdir}")
       }
     }

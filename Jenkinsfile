@@ -5,8 +5,6 @@ pipeline{
     stage("build"){
       steps{
         echo("Inside build")
-        currentdir=pwd();
-        echo($currentdir);
       }
     }
     stage("test"){

@@ -16,7 +16,7 @@ pipeline{
             bat "mvn test"
           }
           catch(err){
-           echo "Build fail with $err" 
+           echo "Build fail with $err. Continuing to next step" 
           }
         }
       }
@@ -24,11 +24,27 @@ pipeline{
     stage("test"){
       steps{
         echo("Inside test")
+        script{
+          try{
+            bat "mvn test"
+          }
+          catch(err){
+           echo "Test fail with $err. Continuing to next step" 
+          }
+        }
       }
     }
     stage("deploy"){
       steps{
         echo("Inside deploy")
+        script{
+          try{
+            bat "mvn spring-boot:run"
+          }
+          catch(err){
+           echo "deploy fail with $err. Continuing to next step" 
+          }
+        }
       }
     }
   }

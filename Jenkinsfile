@@ -1,9 +1,12 @@
+def build_success=false;
 pipeline{
   agent any
   stages{
     stage("build"){
       steps{
         echo("Inside build")
+        currentdir=pwd();
+        echo($currentdir);
       }
     }
     stage("test"){

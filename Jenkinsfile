@@ -7,7 +7,7 @@ pipeline{
         echo("Inside build")
         Maven("maven"){
           sh 'mvn clean'
-          sh 'mvn build'
+          sh 'mvn compile'
         }
       }
     }
